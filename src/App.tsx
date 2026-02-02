@@ -1,15 +1,7 @@
-import { Button, Container, Typography } from "@mui/material";
+import { Login } from "./pages/Login/Login";
 
 function App() {
-  return (
-    <Container maxWidth="sm" sx={{ mt: 8 }}>
-      <Typography variant="h4" gutterBottom>
-        SIGLA – Frontend
-      </Typography>
-
-      <Button variant="contained">Teste Material UI</Button>
-    </Container>
-  );
+  return <Login />;
 }
 
 export default App;

@@ -1,0 +1,28 @@
+.logo {
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  color: var(--logo-color);
+}
+
+.logoMain {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.logoSmall {
+  display: flex;
+  align-items: center;
+  color: var(--logo-small-color);
+}
+
+.iconLarge {
+  font-size: var(--icon-lg) !important;
+  color: var(--logo-color);
+}
+
+.iconSmall {
+  font-size: var(--icon-md) !important;
+  color: var(--logo-small-color);
+}

@@ -1,0 +1,84 @@
+.container {
+  background: var(--white);
+  border-radius: 8px;
+  padding: var(--space-3);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* ================= FILTERS ================= */
+
+.filters {
+  display: flex;
+  gap: var(--space-1);
+  margin-bottom: var(--space-3);
+  flex-wrap: wrap;
+}
+
+/* ================= TABLE ================= */
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+
+  th {
+    font-size: 0.75rem; // mais clean que 0.85
+    font-weight: 600;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    white-space: nowrap;
+    font-weight: 700;
+  }
+
+  td {
+    font-size: 0.875rem;
+    font-weight: 400;
+    color: var(--text-primary);
+    white-space: nowrap;
+    font-weight: 500;
+  }
+}
+
+/* ================= STATUS BADGE ================= */
+
+.status {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 10px;
+  border-radius: 8px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  width: 100px;
+}
+
+/* ===== STATUS COLORS ===== */
+
+.LICENCIADA {
+  background: color-mix(in srgb, var(--status-licenciada) 90%, white);
+  color: var(--white);
+}
+
+.VENCIDA {
+  background: color-mix(in srgb, var(--status-vencida) 90%, white);
+  color: var(--white);
+}
+
+.EM_ANDAMENTO {
+  background: color-mix(in srgb, var(--status-em-andamento) 90%, white);
+  color: var(--white);
+}
+
+.A_VENCER {
+  background: color-mix(in srgb, var(--status-a-vencer) 90%, white);
+  color: var(--white);
+}
+
+/* ================= PAGINATION ================= */
+
+.pagination {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: var(--space-8);
+  padding-top: var(--space-3);
+}

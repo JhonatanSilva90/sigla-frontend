@@ -120,5 +120,48 @@ export const theme = createTheme({
         },
       },
     },
+
+    MuiAppBar: {
+      styleOverrides: {
+        root: {
+          backgroundColor: "#ffffff",
+          color: "#000000",
+          boxShadow: "none",
+          borderBottom: "none",
+        },
+      },
+    },
+
+    MuiToolbar: {
+      styleOverrides: {
+        root: {
+          minHeight: 64,
+          paddingLeft: 16,
+          paddingRight: 16,
+        },
+      },
+    },
+
+    MuiDivider: {
+      styleOverrides: {
+        root: {
+          display: "none",
+        },
+      },
+    },
+    MuiPaginationItem: {
+      styleOverrides: {
+        root: {
+          "&.Mui-selected": {
+            backgroundColor: "var(--green-main)",
+            color: "#ffffff",
+
+            "&:hover": {
+              backgroundColor: "var(--green-dark)",
+            },
+          },
+        },
+      },
+    },
   },
 });

@@ -7,6 +7,10 @@ export function ThemeCSSVars() {
     <style>
       {`
         :root {
+         /* ================= FONTS ================= */
+          --font-primary: "Roboto", "Inter", "Helvetica", "Arial", sans-serif;
+          --font-ui: ${theme.typography.fontFamily};
+          
           /* ================= BASE ================= */
           --white: ${theme.palette.common.white};
           --black: ${theme.palette.common.black};
@@ -14,6 +18,7 @@ export function ThemeCSSVars() {
           /* ================= BRAND ================= */
           --green-main: ${theme.palette.primary.main};
           --green-dark: ${theme.palette.primary.dark};
+          --green-light: ${theme.palette.primary.light};
 
           /* ================= STATUS DE LICENÇA ================= */
           --status-licenciada: ${theme.palette.success.main};

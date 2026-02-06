@@ -20,6 +20,7 @@ export function Login() {
               label="E-mail"
               type="email"
               autoComplete="email"
+              placeholder="joao@email.com"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />

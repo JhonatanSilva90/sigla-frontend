@@ -1,0 +1,18 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  margin-bottom: 4px;
+}
+
+.input {
+  background-color: var(--white);
+  border-radius: 8px;
+
+  .MuiOutlinedInput-root {
+    background-color: var(--white);
+    border-radius: 8px;
+  }
+}

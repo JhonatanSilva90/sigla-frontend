@@ -1,0 +1,28 @@
+.filters {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr 2fr;
+  gap: 12px;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+.tableContainer {
+  border-radius: 8px;
+}
+
+.table {
+  background-color: #fff;
+}
+
+:global(.MuiTableCell-head) {
+  font-weight: 600;
+  background-color: #f5f7fa;
+}
+
+:global(.MuiTableRow-root:hover) {
+  background-color: #f9fafb;
+}
+
+:global(.MuiChip-root) {
+  font-weight: 500;
+}

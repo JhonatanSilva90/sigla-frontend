@@ -27,7 +27,7 @@ export function AppHeader({ onLogout }: AppHeaderProps) {
   const { anchorEl, open, handleOpenMenu, handleCloseMenu } = useAppHeader();
 
   return (
-    <AppBar position="static" elevation={0} className={styles.appBar}>
+    <AppBar position="fixed" elevation={0} className={styles.appBar}>
       <Container maxWidth="xl">
         <Toolbar disableGutters className={styles.toolbar}>
           <Box className={styles.logoWrapper}>

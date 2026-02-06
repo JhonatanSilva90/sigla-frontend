@@ -1,10 +1,19 @@
 import { useMemo, useState } from "react";
 import { LICENSES_MOCK } from "../mocks/licenses.mock";
-import type { LicenseStatus } from "../types";
+import type { LicenseStatus, License } from "../types";
 
 const ROWS_PER_PAGE = 10;
 
-export function useLicenseTable() {
+interface UseLicenseTableReturn {
+  data: License[];
+  status: LicenseStatus | "TODOS";
+  setStatus: (s: LicenseStatus | "TODOS") => void;
+  page: number;
+  setPage: (p: number) => void;
+  totalPages: number;
+}
+
+export function useLicenseTable(): UseLicenseTableReturn {
   const [status, setStatus] = useState<LicenseStatus | "TODOS">("TODOS");
   const [page, setPage] = useState(1);
 

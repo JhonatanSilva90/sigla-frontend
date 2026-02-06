@@ -1,0 +1,45 @@
+// .upload {
+//   display: flex;
+//   flex-direction: column;
+//   gap: var(--space-1);
+// }
+
+// .fileName {
+//   font-size: 0.75rem;
+//   color: var(--grey-600);
+//   word-break: break-word;
+// }
+
+// .compactButton {
+//   padding: 6px 12px;
+//   font-size: 0.75rem;
+//   min-height: unset;
+// }
+// .fileInfo {
+//   display: flex;
+//   align-items: center;
+// }
+
+.upload {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.uploadButton {
+  align-self: flex-start;
+  font-size: 0.75rem;
+  padding: 6px 12px;
+}
+
+.fileInfo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.fileName {
+  font-size: 0.75rem;
+  color: var(--grey-500);
+  word-break: break-word;
+}

@@ -2,6 +2,7 @@
 import { createTheme } from "@mui/material/styles";
 
 export const theme = createTheme({
+  /* ================= PALETTE ================= */
   palette: {
     primary: {
       main: "#134d18",
@@ -38,6 +39,11 @@ export const theme = createTheme({
     },
   },
 
+  /* ================= SHAPE ================= */
+  shape: {
+    borderRadius: 8,
+  },
+
   /* ================= TYPOGRAPHY ================= */
   typography: {
     fontFamily: `"Libre Franklin", "Inter", "Roboto", "Helvetica", "Arial", sans-serif`,
@@ -59,23 +65,22 @@ export const theme = createTheme({
     body1: {
       fontSize: "1rem",
       lineHeight: 1.6,
-      fontWeight: 400,
     },
 
     body2: {
       fontSize: "0.875rem",
       lineHeight: 1.5,
-      fontWeight: 400,
     },
-  },
 
-  shape: {
-    borderRadius: 8,
+    caption: {
+      fontSize: "0.75rem",
+      color: "#616161",
+    },
   },
 
   /* ================= COMPONENTS ================= */
   components: {
-    /* ---------- LABEL ---------- */
+    /* ---------- FORM LABEL ---------- */
     MuiFormLabel: {
       styleOverrides: {
         root: {
@@ -101,6 +106,7 @@ export const theme = createTheme({
       styleOverrides: {
         root: {
           borderRadius: 8,
+          backgroundColor: "#ffffff",
 
           "& .MuiOutlinedInput-notchedOutline": {
             borderRadius: 8,
@@ -109,18 +115,52 @@ export const theme = createTheme({
       },
     },
 
+    /* ---------- BUTTON (FileUpload, Forms, etc) ---------- */
     MuiButton: {
       styleOverrides: {
+        root: {
+          textTransform: "none",
+          borderRadius: 8,
+          fontSize: "0.875rem",
+        },
+
         contained: {
+          backgroundColor: "#134d18",
+          color: "#ffffff",
+
+          "&:hover": {
+            backgroundColor: "#0f3e13",
+          },
+
           "&.Mui-disabled": {
             backgroundColor: "#2e7d32",
             color: "#ffffff",
-            opacity: 0.8,
+            opacity: 0.75,
+          },
+        },
+
+        outlined: {
+          borderColor: "#134d18",
+          color: "#134d18",
+
+          "&:hover": {
+            backgroundColor: "rgba(19, 77, 24, 0.08)",
+            borderColor: "#134d18",
           },
         },
       },
     },
 
+    /* ---------- ICON BUTTON (delete file, etc) ---------- */
+    MuiIconButton: {
+      styleOverrides: {
+        root: {
+          padding: 4,
+        },
+      },
+    },
+
+    /* ---------- APP BAR ---------- */
     MuiAppBar: {
       styleOverrides: {
         root: {
@@ -132,6 +172,7 @@ export const theme = createTheme({
       },
     },
 
+    /* ---------- TOOLBAR ---------- */
     MuiToolbar: {
       styleOverrides: {
         root: {
@@ -142,6 +183,7 @@ export const theme = createTheme({
       },
     },
 
+    /* ---------- DIVIDER ---------- */
     MuiDivider: {
       styleOverrides: {
         root: {
@@ -149,15 +191,17 @@ export const theme = createTheme({
         },
       },
     },
+
+    /* ---------- PAGINATION ---------- */
     MuiPaginationItem: {
       styleOverrides: {
         root: {
           "&.Mui-selected": {
-            backgroundColor: "var(--green-main)",
+            backgroundColor: "#134d18",
             color: "#ffffff",
 
             "&:hover": {
-              backgroundColor: "var(--green-dark)",
+              backgroundColor: "#0f3e13",
             },
           },
         },

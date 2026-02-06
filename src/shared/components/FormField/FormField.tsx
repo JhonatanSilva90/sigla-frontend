@@ -9,6 +9,7 @@ interface FormFieldProps {
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   placeholder?: string;
   autoComplete?: string;
+  labelColor?: string;
 }
 
 export function FormField({
@@ -19,10 +20,17 @@ export function FormField({
   onChange,
   placeholder,
   autoComplete,
+  labelColor,
 }: FormFieldProps) {
   return (
     <FormControl>
-      <FormLabel htmlFor={id}>{label}</FormLabel>
+      <FormLabel
+        htmlFor={id}
+        className={styles.label}
+        style={labelColor ? { color: labelColor } : undefined}
+      >
+        {label}
+      </FormLabel>
       <TextField
         variant="outlined"
         id={id}

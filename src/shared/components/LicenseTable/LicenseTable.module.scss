@@ -1,5 +1,6 @@
 .container {
-  background: var(--white);
+  //   background: var(--white);
+  background: var(--grey-100);
   border-radius: 8px;
   padding: var(--space-3);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
@@ -7,10 +8,34 @@
 
 /* ================= FILTERS ================= */
 
+.filter {
+  background-color: var(--white) !important;
+  border: 1px solid var(--grey-300) !important;
+  color: var(--grey-700) !important;
+
+  &:hover {
+    background-color: var(--grey-100);
+    border-color: var(--grey-500);
+    color: var(--grey-700);
+  }
+}
+
+.filterActive {
+  background-color: var(--grey-700) !important;
+  border: 1px solid var(--grey-700) !important;
+  color: var(--white) !important;
+
+  &:hover {
+    background-color: var(--grey-700);
+    opacity: 0.9;
+  }
+}
+
 .filters {
   display: flex;
-  gap: var(--space-1);
+  gap: var(--space-2);
   margin-bottom: var(--space-3);
+  margin-left: var(--space-8);
   flex-wrap: wrap;
 }
 
@@ -19,6 +44,12 @@
 .table {
   width: 100%;
   border-collapse: collapse;
+
+  th,
+  td {
+    text-align: center;
+    vertical-align: middle;
+  }
 
   th {
     font-size: 0.75rem; // mais clean que 0.85
@@ -42,7 +73,7 @@
 /* ================= STATUS BADGE ================= */
 
 .status {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   padding: 4px 10px;
@@ -50,28 +81,29 @@
   font-size: 0.75rem;
   font-weight: 600;
   width: 100px;
+
+  margin: 0 auto;
+
+  color: var(--white);
+  background: color-mix(in srgb, var(--status-color) 90%, white);
 }
 
 /* ===== STATUS COLORS ===== */
 
 .LICENCIADA {
-  background: color-mix(in srgb, var(--status-licenciada) 90%, white);
-  color: var(--white);
+  --status-color: var(--status-licenciada);
 }
 
 .VENCIDA {
-  background: color-mix(in srgb, var(--status-vencida) 90%, white);
-  color: var(--white);
+  --status-color: var(--status-vencida);
 }
 
 .EM_ANDAMENTO {
-  background: color-mix(in srgb, var(--status-em-andamento) 90%, white);
-  color: var(--white);
+  --status-color: var(--status-em-andamento);
 }
 
 .A_VENCER {
-  background: color-mix(in srgb, var(--status-a-vencer) 90%, white);
-  color: var(--white);
+  --status-color: var(--status-a-vencer);
 }
 
 /* ================= PAGINATION ================= */
@@ -81,4 +113,21 @@
   justify-content: flex-end;
   padding-right: var(--space-8);
   padding-top: var(--space-3);
+}
+
+.processLink {
+  font-size: 0.875rem !important;
+  font-weight: 500 !important;
+  color: var(--text-primary) !important; // força a cor igual ao td
+  text-decoration: underline !important; // força o sublinhado
+  white-space: nowrap !important;
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  cursor: pointer !important;
+
+  &:hover {
+    text-decoration: underline !important; // garante sublinhado no hover
+    background: transparent !important;
+  }
 }

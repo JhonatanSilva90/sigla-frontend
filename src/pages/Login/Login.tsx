@@ -1,7 +1,7 @@
 import { Logo } from "./Logo/Logo";
 import { Box, Button, Link } from "@mui/material";
 import styles from "./Login.module.scss";
-import { FormField } from "../../shared/components/FormField";
+import { FormField } from "@/shared/components/FormField";
 import { useLogin } from "./hooks";
 
 export function Login() {

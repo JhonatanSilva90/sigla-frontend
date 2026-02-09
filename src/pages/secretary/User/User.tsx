@@ -1,4 +1,4 @@
-import { type FC, useState, useMemo } from "react";
+import { type FC } from "react";
 import {
   Stack,
   Typography,
@@ -10,35 +10,17 @@ import {
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 
 import { SecretaryLayout } from "../../layouts/SecretaryLayout";
-import { DataTable } from "../../../shared/components/DataTable/DataTable";
-import type { Column } from "../../../shared/components/DataTable/types";
-import { TablePagination } from "../../../shared/components/TablePagination/TablePagination";
-import { USER_MOCK } from "./mocks/user.mock";
+import { DataTable, TablePagination, type Column } from "@/shared/components";
 import type { UserDTO } from "./types";
 import styles from "./User.module.scss";
+import { useUsers } from "./hooks/useUsers";
 
-// ----- Colunas -----
+/* ----- Colunas ----- */
 const userColumns: Column<UserDTO>[] = [
-  {
-    key: "nome",
-    header: "Nome",
-    render: (row) => row.nome,
-  },
-  {
-    key: "cpf",
-    header: "CPF",
-    render: (row) => row.cpf,
-  },
-  {
-    key: "email",
-    header: "Email",
-    render: (row) => row.email,
-  },
-  {
-    key: "formacao",
-    header: "Formação",
-    render: (row) => row.formacao,
-  },
+  { key: "nome", header: "Nome", render: (row) => row.nome },
+  { key: "cpf", header: "CPF", render: (row) => row.cpf },
+  { key: "email", header: "Email", render: (row) => row.email },
+  { key: "formacao", header: "Formação", render: (row) => row.formacao },
   {
     key: "numeroRegistro",
     header: "Número Registro",
@@ -56,29 +38,19 @@ const userColumns: Column<UserDTO>[] = [
   },
 ];
 
-// ----- Página -----
 export const User: FC = () => {
-  const [nomeFilter, setNomeFilter] = useState("");
-  const [cpfFilter, setCpfFilter] = useState("");
-  const [emailFilter, setEmailFilter] = useState("");
-
-  const [page, setPage] = useState(1);
-  const rowsPerPage = 5;
-
-  const filteredUsers = useMemo(() => {
-    return USER_MOCK.filter(
-      (u) =>
-        u.nome.toLowerCase().includes(nomeFilter.toLowerCase()) &&
-        u.cpf.toLowerCase().includes(cpfFilter.toLowerCase()) &&
-        u.email.toLowerCase().includes(emailFilter.toLowerCase()),
-    );
-  }, [nomeFilter, cpfFilter, emailFilter]);
-
-  const totalPages = Math.ceil(filteredUsers.length / rowsPerPage);
-  const paginatedUsers = filteredUsers.slice(
-    (page - 1) * rowsPerPage,
-    page * rowsPerPage,
-  );
+  const {
+    users,
+    totalPages,
+    page,
+    nomeFilter,
+    cpfFilter,
+    emailFilter,
+    setNomeFilter,
+    setCpfFilter,
+    setEmailFilter,
+    setPage,
+  } = useUsers();
 
   return (
     <SecretaryLayout>
@@ -111,11 +83,7 @@ export const User: FC = () => {
       </Paper>
 
       {/* Tabela */}
-      <DataTable
-        columns={userColumns}
-        data={paginatedUsers}
-        rowKey={(row) => row.id}
-      />
+      <DataTable columns={userColumns} data={users} rowKey={(row) => row.id} />
 
       {/* Paginação */}
       <TablePagination

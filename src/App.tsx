@@ -9,11 +9,11 @@ function App() {
   return (
     <>
       {/* <Login /> */}
-      {/* <AppHeader /> */}
+      <AppHeader />
       {/* <LicenseTable /> */}
       {/* <Details /> */}
-      {/* <User /> */}
-      <TechnicalResponsibleForm />
+      <User />
+      {/* <TechnicalResponsibleForm /> */}
     </>
   );
 }

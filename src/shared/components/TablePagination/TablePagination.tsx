@@ -1,4 +1,3 @@
-// components/TablePagination.tsx
 import { type FC } from "react";
 import { Box, Pagination } from "@mui/material";
 import styles from "./TablePagination.module.scss";

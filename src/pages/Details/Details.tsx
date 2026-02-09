@@ -15,9 +15,8 @@ import AssignmentIndIcon from "@mui/icons-material/AssignmentInd";
 import HistoryIcon from "@mui/icons-material/History";
 import PostAddIcon from "@mui/icons-material/PostAdd";
 import ManageHistoryIcon from "@mui/icons-material/ManageHistory";
-
+import { useDetails } from "./hooks/useDetails";
 import styles from "./Details.module.scss";
-import { LICENSES_MOCK } from "../../shared/components/LicenseTable/mocks/licenses.mock";
 
 /* ================= TYPES ================= */
 interface InfoFieldProps {
@@ -71,8 +70,7 @@ function Section({ title, children, defaultExpanded, icon }: SectionProps) {
 /* ================= PAGE ================= */
 export function Details() {
   const { id } = { id: "1" };
-
-  const license = LICENSES_MOCK.find((item) => item.id === id);
+  const { license } = useDetails(id);
 
   if (!license) {
     return <Typography>Licença não encontrada</Typography>;

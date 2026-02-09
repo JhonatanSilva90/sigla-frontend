@@ -1,6 +1,5 @@
 import CompostSharpIcon from "@mui/icons-material/CompostSharp";
 import { Box, Typography } from "@mui/material";
-
 import styles from "./Logo.module.scss";
 
 export function Logo() {

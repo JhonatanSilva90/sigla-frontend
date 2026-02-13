@@ -1,4 +1,5 @@
 import { type FC } from "react";
+import { useNavigate } from "react-router-dom";
 import {
   Stack,
   Typography,
@@ -8,15 +9,20 @@ import {
   IconButton,
 } from "@mui/material";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
-
-import { SecretaryLayout } from "../../layouts/SecretaryLayout";
+import { SecretaryLayout } from "@/pages/layouts/SecretaryLayout";
 import { DataTable, TablePagination, type Column } from "@/shared/components";
+import { ROLE_LABELS } from "@/shared/auth/roles";
 import type { UserDTO } from "./types";
 import styles from "./User.module.scss";
 import { useUsers } from "./hooks/useUsers";
 
 /* ----- Colunas ----- */
 const userColumns: Column<UserDTO>[] = [
+  {
+    key: "tipo",
+    header: "Tipo de Usuário",
+    render: (row) => (row.role ? ROLE_LABELS[row.role] : "-"),
+  },
   { key: "nome", header: "Nome", render: (row) => row.nome },
   { key: "cpf", header: "CPF", render: (row) => row.cpf },
   { key: "email", header: "Email", render: (row) => row.email },
@@ -39,6 +45,12 @@ const userColumns: Column<UserDTO>[] = [
 ];
 
 export const User: FC = () => {
+  const navigate = useNavigate();
+
+  function handleAdd() {
+    navigate("/users/new");
+  }
+
   const {
     users,
     totalPages,
@@ -57,7 +69,9 @@ export const User: FC = () => {
       {/* Header */}
       <Stack direction="row" justifyContent="space-between" mb={3}>
         <Typography variant="h5">Gestão de Usuários</Typography>
-        <Button variant="contained">+ Adicionar Usuário</Button>
+        <Button variant="contained" onClick={handleAdd}>
+          + Adicionar Usuário
+        </Button>
       </Stack>
 
       {/* Filtros */}

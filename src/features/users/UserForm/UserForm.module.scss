@@ -1,0 +1,17 @@
+.container {
+  padding: 16px;
+}
+.title {
+  margin-bottom: 12px;
+  padding-bottom: 24px;
+}
+.section {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin-bottom: 16px;
+}
+.actions {
+  display: flex;
+  justify-content: flex-end;
+}

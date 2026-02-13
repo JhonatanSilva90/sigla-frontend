@@ -10,7 +10,7 @@ export function Logo() {
         <Typography variant="h2">SIGLA</Typography>
       </Box>
       <Typography>
-        Sistema Integrado de Gestão de Licenças Ambientais{" "}
+        Sistema Integrado de Gestão de Licenças Ambientais
       </Typography>
     </Box>
   );

@@ -32,6 +32,7 @@ export function TechnicalResponsibleForm() {
             label="Nome Completo"
             value={form.nome}
             onChange={handleChange}
+            labelColor="var(--grey-700)"
           />
 
           <FormField
@@ -41,6 +42,7 @@ export function TechnicalResponsibleForm() {
             onChange={(e) =>
               handleFormattedChange("cpf", formatCPF(e.target.value))
             }
+            labelColor="var(--grey-700)"
           />
 
           <FormField
@@ -48,6 +50,7 @@ export function TechnicalResponsibleForm() {
             label="RG"
             value={form.rg}
             onChange={handleChange}
+            labelColor="var(--grey-700)"
           />
 
           <FormField
@@ -55,12 +58,13 @@ export function TechnicalResponsibleForm() {
             label="Sexo"
             value={form.sexo}
             onChange={handleChange}
+            labelColor="var(--grey-700)"
           />
-
           <DateField
             label="Data de Nascimento"
             value={form.dataNascimento}
             onChange={(value) => handleFormattedChange("dataNascimento", value)}
+            labelColor="var(--grey-700)"
           />
 
           <FormField
@@ -68,6 +72,7 @@ export function TechnicalResponsibleForm() {
             label="Naturalidade"
             value={form.naturalidade}
             onChange={handleChange}
+            labelColor="var(--grey-700)"
           />
 
           <FormField
@@ -75,6 +80,7 @@ export function TechnicalResponsibleForm() {
             label="Nacionalidade"
             value={form.nacionalidade}
             onChange={handleChange}
+            labelColor="var(--grey-700)"
           />
         </Box>
       </Box>
@@ -89,6 +95,7 @@ export function TechnicalResponsibleForm() {
             label="Profissão"
             value={form.profissao}
             onChange={handleChange}
+            labelColor="var(--grey-700)"
           />
 
           <FormField
@@ -96,6 +103,7 @@ export function TechnicalResponsibleForm() {
             label="Órgão de Classe"
             value={form.conselho}
             onChange={handleChange}
+            labelColor="var(--grey-700)"
           />
 
           <FormField
@@ -103,6 +111,7 @@ export function TechnicalResponsibleForm() {
             label="Nº Registro no Conselho"
             value={form.registroConselho}
             onChange={handleChange}
+            labelColor="var(--grey-700)"
           />
 
           <FormField
@@ -110,6 +119,7 @@ export function TechnicalResponsibleForm() {
             label="Especializações"
             value={form.especializacoes}
             onChange={handleChange}
+            labelColor="var(--grey-700)"
           />
         </Box>
       </Box>
@@ -126,6 +136,7 @@ export function TechnicalResponsibleForm() {
             onChange={(e) =>
               handleFormattedChange("telefone", formatPhone(e.target.value))
             }
+            labelColor="var(--grey-700)"
           />
 
           <FormField
@@ -135,6 +146,7 @@ export function TechnicalResponsibleForm() {
             onChange={(e) =>
               handleFormattedChange("celular", formatPhone(e.target.value))
             }
+            labelColor="var(--grey-700)"
           />
 
           <FormField
@@ -143,6 +155,7 @@ export function TechnicalResponsibleForm() {
             type="email"
             value={form.email}
             onChange={handleChange}
+            labelColor="var(--grey-700)"
           />
         </Box>
       </Box>
@@ -157,6 +170,7 @@ export function TechnicalResponsibleForm() {
             label="Rua/Avenida"
             value={form.rua}
             onChange={handleChange}
+            labelColor="var(--grey-700)"
           />
 
           <FormField
@@ -165,6 +179,7 @@ export function TechnicalResponsibleForm() {
             type="number"
             value={form.numero}
             onChange={handleChange}
+            labelColor="var(--grey-700)"
           />
 
           <FormField
@@ -172,6 +187,7 @@ export function TechnicalResponsibleForm() {
             label="Bairro"
             value={form.bairro}
             onChange={handleChange}
+            labelColor="var(--grey-700)"
           />
 
           <FormField
@@ -179,6 +195,7 @@ export function TechnicalResponsibleForm() {
             label="Município"
             value={form.municipio}
             onChange={handleChange}
+            labelColor="var(--grey-700)"
           />
 
           <FormField
@@ -188,6 +205,7 @@ export function TechnicalResponsibleForm() {
             onChange={(e) =>
               handleFormattedChange("cep", formatCEP(e.target.value))
             }
+            labelColor="var(--grey-700)"
           />
         </Box>
       </Box>

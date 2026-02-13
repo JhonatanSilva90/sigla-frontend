@@ -1,0 +1,18 @@
+.container {
+  padding: 16px;
+}
+.title {
+  margin-bottom: 12px;
+}
+.section {
+  margin-bottom: 16px;
+}
+.attachmentsGrid {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(4, 1fr);
+}
+.actions {
+  display: flex;
+  justify-content: flex-end;
+}

@@ -5,14 +5,26 @@
 
 .label {
   margin-bottom: 4px;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  font-family: var(--font-primary);
+  color: inherit;
 }
 
 .input {
   background-color: var(--white);
   border-radius: 8px;
 
+  border: 1px solid var(--grey-300);
+  box-sizing: border-box;
+
   .MuiOutlinedInput-root {
     background-color: var(--white);
     border-radius: 8px;
+  }
+
+  /* normalize inner input padding to match FormField textfield */
+  .MuiOutlinedInput-input {
+    padding: 12px 14px;
   }
 }

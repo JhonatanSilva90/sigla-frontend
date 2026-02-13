@@ -1,6 +1,7 @@
 import { Box, Button, IconButton } from "@mui/material";
 import EditOutlinedIcon from "@mui/icons-material/EditOutlined";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
+import { useNavigate } from "react-router-dom";
 import { DataTable, type Column } from "../DataTable/";
 import { TablePagination } from "../TablePagination/";
 import styles from "./LicenseTable.module.scss";
@@ -21,6 +22,8 @@ function getStatusLabel(status: LicenseStatus | "TODOS") {
 }
 
 export function LicenseTable() {
+  const navigate = useNavigate();
+
   const { data, setStatus, page, setPage, totalPages, status } =
     useLicenseTable();
 
@@ -29,7 +32,12 @@ export function LicenseTable() {
       key: "processo",
       header: "Processo",
       render: (row) => (
-        <Button className={styles.processLink}>{row.processo}</Button>
+        <Button
+          className={styles.processLink}
+          onClick={() => navigate(`/licenses/${row.id}`)}
+        >
+          {row.processo}
+        </Button>
       ),
     },
     {

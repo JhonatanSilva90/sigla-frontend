@@ -46,7 +46,7 @@ export const theme = createTheme({
 
   /* ================= TYPOGRAPHY ================= */
   typography: {
-    fontFamily: `"Libre Franklin", "Inter", "Roboto", "Helvetica", "Arial", sans-serif`,
+    fontFamily: `"Montserrat", "Roboto", "Helvetica", "Arial", sans-serif`,
 
     h1: {
       fontWeight: 800,
@@ -80,6 +80,13 @@ export const theme = createTheme({
 
   /* ================= COMPONENTS ================= */
   components: {
+    MuiCssBaseline: {
+      styleOverrides: {
+        body: {
+          fontFamily: `"Montserrat", "Roboto", "Helvetica", "Arial", sans-serif`,
+        },
+      },
+    },
     /* ---------- FORM LABEL ---------- */
     MuiFormLabel: {
       styleOverrides: {
@@ -123,19 +130,17 @@ export const theme = createTheme({
           borderRadius: 8,
           fontSize: "0.875rem",
         },
-
         contained: {
-          backgroundColor: "#134d18",
+          backgroundColor: "#2E7D32", // verde médio vibrante
           color: "#ffffff",
 
           "&:hover": {
-            backgroundColor: "#0f3e13",
+            backgroundColor: "#1B5E20",
           },
 
           "&.Mui-disabled": {
-            backgroundColor: "#2e7d32",
+            backgroundColor: "#A5D6A7",
             color: "#ffffff",
-            opacity: 0.75,
           },
         },
 

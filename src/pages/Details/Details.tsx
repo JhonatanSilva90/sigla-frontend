@@ -16,6 +16,7 @@ import HistoryIcon from "@mui/icons-material/History";
 import PostAddIcon from "@mui/icons-material/PostAdd";
 import ManageHistoryIcon from "@mui/icons-material/ManageHistory";
 import { useDetails } from "./hooks/useDetails";
+import { useParams } from "react-router-dom";
 import styles from "./Details.module.scss";
 
 /* ================= TYPES ================= */
@@ -69,8 +70,10 @@ function Section({ title, children, defaultExpanded, icon }: SectionProps) {
 
 /* ================= PAGE ================= */
 export function Details() {
-  const { id } = { id: "1" };
-  const { license } = useDetails(id);
+  // const { id } = { id: "1" };
+  const { id } = useParams<{ id: string }>();
+  // const { license } = useDetails(id);
+  const { license } = useDetails(id ?? "");
 
   if (!license) {
     return <Typography>Licença não encontrada</Typography>;

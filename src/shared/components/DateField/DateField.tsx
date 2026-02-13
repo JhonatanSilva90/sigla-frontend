@@ -1,5 +1,5 @@
 import dayjs, { Dayjs } from "dayjs";
-import { Typography } from "@mui/material";
+import { FormLabel } from "@mui/material";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
@@ -26,13 +26,13 @@ export function DateField({
 
   return (
     <div className={styles.wrapper}>
-      <Typography
-        variant="body2"
+      <FormLabel
+        htmlFor="date"
         className={styles.label}
         sx={{ color: labelColor }}
       >
         {label}
-      </Typography>
+      </FormLabel>
 
       <LocalizationProvider dateAdapter={AdapterDayjs}>
         <DatePicker

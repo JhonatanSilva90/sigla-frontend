@@ -37,7 +37,6 @@ export function Login() {
             <Button
               type="submit"
               variant="contained"
-              color="success"
               disabled={loading}
               fullWidth
             >

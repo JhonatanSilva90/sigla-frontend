@@ -6,6 +6,11 @@ import { User } from "@/features/users/";
 
 import { TechnicalResponsibleForm } from "@/features/users";
 import { UserForm } from "@/features/users";
+import {
+  TechnicalResponsibleLayout,
+  ProtocolForm,
+  LicenseTracker,
+} from "@/features/licenses/technicalResponsible";
 
 export function AppRoutes() {
   return (
@@ -19,6 +24,13 @@ export function AppRoutes() {
         path="/users/technical-responsible/new"
         element={<TechnicalResponsibleForm />}
       />
+      <Route
+        path="/technical-responsible"
+        element={<TechnicalResponsibleLayout />}
+      >
+        <Route path="protocol" element={<ProtocolForm />} />
+        <Route path="tracker" element={<LicenseTracker />} />
+      </Route>
     </Routes>
   );
 }

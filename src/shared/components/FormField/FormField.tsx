@@ -10,6 +10,9 @@ interface FormFieldProps {
   placeholder?: string;
   autoComplete?: string;
   labelColor?: string;
+  multiline?: boolean;
+  minRows?: number;
+  maxRows?: number;
 }
 
 export function FormField({
@@ -21,6 +24,9 @@ export function FormField({
   placeholder,
   autoComplete,
   labelColor,
+  multiline = false,
+  minRows,
+  maxRows,
 }: FormFieldProps) {
   return (
     <FormControl>
@@ -40,6 +46,9 @@ export function FormField({
         placeholder={placeholder}
         autoComplete={autoComplete}
         className={styles.input}
+        multiline={multiline}
+        minRows={minRows}
+        maxRows={maxRows}
       />
     </FormControl>
   );

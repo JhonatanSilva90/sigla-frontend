@@ -1,0 +1,57 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding: 16px 0;
+}
+
+.title {
+  margin-bottom: 8px;
+}
+
+/* Apenas os selects ficam em grid */
+.selectsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(320px, 1fr));
+  gap: var(--space-3);
+}
+
+/* Data ocupa só o necessário */
+.dateField {
+  width: 220px;
+}
+
+/* Descrição ocupa 100% */
+.descriptionField {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+}
+
+.documentsSection {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.documentRow {
+  display: flex;
+  align-items: center;
+  width: 70%;
+}
+
+.documentLabel {
+  width: 640px;
+}
+
+.uploadWrapper {
+  width: 320px;
+}
+
+.actions {
+  margin-top: 32px;
+  width: 70%;
+  display: flex;
+  justify-content: flex-end;
+}

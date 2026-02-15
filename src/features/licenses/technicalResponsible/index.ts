@@ -1,3 +1,4 @@
+export * from "./components";
 export * from "./LicenseTracker";
 export * from "./ProtocolForm";
-export * from "./TechnicalResponsibleLayout";
+export * from "./StandardDocuments";

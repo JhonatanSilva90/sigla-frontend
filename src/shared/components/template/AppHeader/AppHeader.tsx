@@ -9,7 +9,7 @@ import {
   Container,
 } from "@mui/material";
 
-import { LogoSmall } from "../../../pages/Login/Logo/Logo";
+import { LogoSmall } from "@/pages/Login/Logo/Logo";
 import { useAppHeader } from "../AppHeader/hooks";
 import styles from "./AppHeader.module.scss";
 
@@ -65,11 +65,27 @@ export function AppHeader({ onLogout }: AppHeaderProps) {
   );
 }
 
+// function stringAvatar(name: string) {
+//   return {
+//     sx: {
+//       bgcolor: "var(--green-light)",
+//     },
+//     children: `${name.split(" ")[0][0]}${name.split(" ")[1][0]}`,
+//   };
+// }
+
 function stringAvatar(name: string) {
+  const parts = name.split(" ");
+  const initials =
+    parts.length > 1 ? `${parts[0][0]}${parts[1][0]}` : `${parts[0][0]}`;
+
   return {
     sx: {
       bgcolor: "var(--green-light)",
+      fontWeight: 600,
+      width: 36,
+      height: 36,
     },
-    children: `${name.split(" ")[0][0]}${name.split(" ")[1][0]}`,
+    children: initials.toUpperCase(),
   };
 }

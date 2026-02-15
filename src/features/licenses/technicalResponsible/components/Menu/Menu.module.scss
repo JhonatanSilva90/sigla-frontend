@@ -1,0 +1,44 @@
+.sidebar {
+  width: 240px;
+  min-width: 240px;
+  max-width: 240px;
+  flex-shrink: 0;
+  min-height: calc(100vh - 64px);
+  padding: var(--space-3) var(--space-2);
+  background-color: var(--bg-subtle);
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  font-weight: 600;
+  color: var(--grey-700);
+  margin-bottom: var(--space-3);
+  letter-spacing: 0.05em;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.link {
+  padding: var(--space-1);
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  color: var(--grey-700);
+  font-weight: 500;
+  transition: all 0.2s ease;
+  font-size: 0.75rem;
+
+  &:hover {
+    background-color: var(--green-50);
+  }
+}
+
+.active {
+  background-color: var(--green-50);
+  color: var(--green-main);
+  font-weight: 600;
+}

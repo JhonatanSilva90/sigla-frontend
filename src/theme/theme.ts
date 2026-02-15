@@ -8,6 +8,7 @@ export const theme = createTheme({
       main: "#134d18",
       dark: "#0f3e13",
       light: "#1b6b25",
+
       contrastText: "#ffffff",
     },
 
@@ -29,6 +30,7 @@ export const theme = createTheme({
     background: {
       default: "#ffffff",
       paper: "#f5f5f5",
+      subtle: "#f2f7f3",
     },
 
     grey: {
@@ -36,6 +38,18 @@ export const theme = createTheme({
       300: "#e0e0e0",
       500: "#9e9e9e",
       700: "#616161",
+    },
+    green: {
+      50: "#f2f7f3",
+      100: "#d7e8d9",
+      200: "#a9d0ad",
+      300: "#7ab77f",
+      400: "#4c9f52",
+      500: "#134d18",
+      600: "#0f3e13",
+      700: "#0c320f",
+      800: "#08250b",
+      900: "#051906",
     },
   },
 

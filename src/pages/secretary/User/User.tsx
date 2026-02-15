@@ -9,20 +9,15 @@ import {
   IconButton,
 } from "@mui/material";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
-import { SecretaryLayout } from "@/pages/layouts/SecretaryLayout/SecretaryLayout";
+
+import { SecretaryLayout } from "../../layouts/SecretaryLayout/SecretaryLayout";
 import { DataTable, TablePagination, type Column } from "@/shared/components";
-import { ROLE_LABELS } from "@/shared/auth/roles";
-import type { UserDTO } from "./types";
+import type { UserDTO } from "@/features/users/User/types";
 import styles from "./User.module.scss";
-import { useUsers } from "./hooks/useUsers";
+import { useUsers } from "@/features/users/User/hooks/useUsers";
 
 /* ----- Colunas ----- */
 const userColumns: Column<UserDTO>[] = [
-  {
-    key: "tipo",
-    header: "Tipo de Usuário",
-    render: (row) => (row.role ? ROLE_LABELS[row.role] : "-"),
-  },
   { key: "nome", header: "Nome", render: (row) => row.nome },
   { key: "cpf", header: "CPF", render: (row) => row.cpf },
   { key: "email", header: "Email", render: (row) => row.email },
@@ -45,12 +40,6 @@ const userColumns: Column<UserDTO>[] = [
 ];
 
 export const User: FC = () => {
-  const navigate = useNavigate();
-
-  function handleAdd() {
-    navigate("/users/new");
-  }
-
   const {
     users,
     totalPages,
@@ -63,6 +52,12 @@ export const User: FC = () => {
     setEmailFilter,
     setPage,
   } = useUsers();
+
+  const navigate = useNavigate();
+
+  function handleAdd() {
+    navigate("/users/secretary/new");
+  }
 
   return (
     <SecretaryLayout>

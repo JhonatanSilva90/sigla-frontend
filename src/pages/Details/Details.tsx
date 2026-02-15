@@ -137,6 +137,26 @@ export function Details() {
             ))}
           </Box>
         </Section>
+        <Section
+          icon={<PostAddIcon />}
+          title="Titulos Emitidos"
+          defaultExpanded
+        >
+          <Box className={styles.documents}>
+            {license.documentos.map((doc) => (
+              <Box key={doc.id} className={styles.document}>
+                <Typography>{doc.nome}</Typography>
+                <Button
+                  size="small"
+                  startIcon={<DownloadIcon />}
+                  href={doc.url}
+                >
+                  Download
+                </Button>
+              </Box>
+            ))}
+          </Box>
+        </Section>
 
         {/* DOCUMENTOS */}
         <Section

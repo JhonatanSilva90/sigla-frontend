@@ -2,18 +2,13 @@
   display: flex;
   flex-direction: column;
   gap: var(--space-3);
-  padding: 16px 0;
-}
-
-.title {
-  margin-bottom: 8px;
+  padding: 12px 0;
 }
 
 /* Apenas os selects ficam em grid */
 .selectsGrid {
   display: grid;
   grid-template-columns: repeat(4, minmax(320px, 1fr));
-  gap: var(--space-3);
 }
 
 /* Data ocupa só o necessário */
@@ -31,7 +26,6 @@
 .documentsSection {
   display: flex;
   flex-direction: column;
-  gap: 16px;
   margin-top: 16px;
 }
 

@@ -22,7 +22,7 @@ export function DataTable<T>({ columns, data, rowKey }: DataTableProps<T>) {
         <TableHead>
           <TableRow>
             {columns.map((col) => (
-              <TableCell key={col.key} align={col.align ?? "center"}>
+              <TableCell key={col.key} align={col.align ?? "left"}>
                 {col.header}
               </TableCell>
             ))}

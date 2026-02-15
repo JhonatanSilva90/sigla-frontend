@@ -44,9 +44,7 @@ export function ProtocolForm() {
 
   return (
     <Box className={styles.container}>
-      <Typography variant="h6" className={styles.title}>
-        Protocolo de Licença
-      </Typography>
+      <Typography variant="h6">Protocolo de Licença</Typography>
 
       {/* GRID SOMENTE DOS SELECTS */}
       <Box className={styles.selectsGrid}>

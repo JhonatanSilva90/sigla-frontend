@@ -91,6 +91,15 @@ export const USER_MOCK: UserDTO[] = [
     formacao: "Engenharia de Produção",
     numeroRegistro: "11234",
   },
+  {
+    id: 11,
+    nome: "Fernando Almeida",
+    cpf: "963.852.741-66",
+    email: "fernando@email.com",
+    role: "TECHNICAL_RESPONSIBLE",
+    formacao: "Engenharia de Produção",
+    numeroRegistro: "11234",
+  },
 ];
 
 export function addMockUser(user: Partial<UserDTO>) {

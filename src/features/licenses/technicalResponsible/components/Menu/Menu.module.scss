@@ -20,6 +20,7 @@
 .nav {
   display: flex;
   flex-direction: column;
+  margin-top: var(--space-2);
   gap: var(--space-1);
 }
 
@@ -33,12 +34,12 @@
   font-size: 0.75rem;
 
   &:hover {
-    background-color: var(--green-50);
+    background-color: var(--green-200);
   }
 }
 
 .active {
-  background-color: var(--green-50);
+  background-color: var(--green-200);
   color: var(--green-main);
   font-weight: 600;
 }

@@ -3,7 +3,6 @@ import { Login } from "@/pages/Login/Login";
 import { LicenseTable } from "@/shared/components/LicenseTable/LicenseTable";
 import { Details } from "@/pages/Details/Details";
 import { User } from "@/features/users/";
-
 import { TechnicalResponsibleForm } from "@/features/users";
 import { UserForm } from "@/features/users";
 import {
@@ -13,6 +12,7 @@ import {
 } from "@/features/licenses/technicalResponsible";
 import { TechnicalResponsibleLayout } from "@/layouts/TechnicalResponsibleLayout";
 import { MainLayout } from "@/layouts";
+import { Navigate } from "react-router-dom";
 
 export function AppRoutes() {
   return (
@@ -28,11 +28,12 @@ export function AppRoutes() {
       />
       <Route element={<MainLayout />}>
         <Route
-          path="technical-responsible"
+          path="technical-responsible/"
           element={<TechnicalResponsibleLayout />}
         >
-          <Route path="protocol" element={<ProtocolForm />} />
+          <Route index element={<Navigate to="tracker" replace />} />
           <Route path="tracker" element={<LicenseTracker />} />
+          <Route path="protocol" element={<ProtocolForm />} />
           <Route path="standard-documents" element={<StandardDocuments />} />
         </Route>
       </Route>

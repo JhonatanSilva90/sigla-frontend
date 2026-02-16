@@ -11,6 +11,14 @@ export function Menu() {
 
       <nav className={styles.nav}>
         <NavLink
+          to="tracker"
+          className={({ isActive }) =>
+            isActive ? `${styles.link} ${styles.active}` : styles.link
+          }
+        >
+          Acompanhar Licenças
+        </NavLink>
+        <NavLink
           to="protocol"
           className={({ isActive }) =>
             isActive ? `${styles.link} ${styles.active}` : styles.link
@@ -19,14 +27,6 @@ export function Menu() {
           Protocolar Licença
         </NavLink>
 
-        <NavLink
-          to="tracker"
-          className={({ isActive }) =>
-            isActive ? `${styles.link} ${styles.active}` : styles.link
-          }
-        >
-          Acompanhar Licenças
-        </NavLink>
         <NavLink
           to="standard-documents"
           className={({ isActive }) =>

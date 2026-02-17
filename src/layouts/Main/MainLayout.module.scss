@@ -1,11 +1,10 @@
 .layout {
   display: flex;
-  flex-direction: column;
   min-height: 100vh;
 }
 
 .content {
   flex: 1;
-  padding-top: 60px; // altura do header fixo (ajuste se necessário)
-  padding-bottom: 60px; // 🔥 altura do footer fixo
+  padding-top: 60px;
+  padding-bottom: 60px;
 }

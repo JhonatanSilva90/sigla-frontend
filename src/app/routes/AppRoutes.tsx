@@ -1,39 +1,61 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import { Login } from "@/pages/Login/Login";
 import { LicenseTable } from "@/shared/components/LicenseTable/LicenseTable";
 import { Details } from "@/pages/Details/Details";
-import { User } from "@/features/users/";
-import { TechnicalResponsibleForm } from "@/features/users";
-import { UserForm } from "@/features/users";
+import { User, UserForm, TechnicalResponsibleForm } from "@/features/users";
 import {
   ProtocolForm,
   LicenseTracker,
   StandardDocuments,
 } from "@/features/licenses/technicalResponsible";
 import { TechnicalResponsibleLayout } from "@/layouts/TechnicalResponsibleLayout";
-import { MainLayout } from "@/layouts";
-import { Navigate } from "react-router-dom";
+import { MainLayout, SecretaryLayout } from "@/layouts";
+import { CoordinatorLayout } from "@/layouts/CoordinatorLayout/CoordinatorLayout";
 
 export function AppRoutes() {
   return (
     <Routes>
-      <Route path="/users" element={<User />} />
-      <Route path="/" element={<LicenseTable />} />
-      <Route path="/licenses/:id" element={<Details />} />
+      {/* Rotas públicas */}
       <Route path="/login" element={<Login />} />
-      <Route path="/users/new" element={<UserForm />} />
-      <Route
-        path="/users/technical-responsible/new"
-        element={<TechnicalResponsibleForm />}
-      />
+
+      {/* Rotas que usam MainLayout */}
       <Route element={<MainLayout />}>
+        {/* Usuários */}
+        <Route path="/users" element={<User />} />
+        <Route path="/users/new" element={<UserForm />} />
         <Route
-          path="technical-responsible/"
+          path="/users/technical-responsible/new"
+          element={<TechnicalResponsibleForm />}
+        />
+
+        {/* Licenças */}
+        <Route path="/licenses" element={<LicenseTable />} />
+        <Route path="/licenses/:id" element={<Details />} />
+
+        {/* Rotas aninhadas - Responsável Técnico */}
+        <Route
+          path="technical-responsible"
           element={<TechnicalResponsibleLayout />}
         >
           <Route index element={<Navigate to="tracker" replace />} />
           <Route path="tracker" element={<LicenseTracker />} />
           <Route path="protocol" element={<ProtocolForm />} />
+          <Route path="standard-documents" element={<StandardDocuments />} />
+        </Route>
+
+        {/* Rotas aninhadas - Secretaria */}
+        <Route path="secretary" element={<SecretaryLayout />}>
+          <Route index element={<Navigate to="licenses" replace />} />
+          <Route path="licenses" element={<LicenseTable />} />
+          <Route path="users" element={<User />} />
+          <Route path="standard-documents" element={<StandardDocuments />} />
+        </Route>
+
+        {/* Rota aninhada - Coordenador */}
+        <Route path="coordinator" element={<CoordinatorLayout />}>
+          <Route index element={<Navigate to="licenses" replace />} />
+          <Route path="licenses" element={<LicenseTable />} />
+          <Route path="users" element={<User />} />
           <Route path="standard-documents" element={<StandardDocuments />} />
         </Route>
       </Route>

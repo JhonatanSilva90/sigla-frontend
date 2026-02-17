@@ -6,7 +6,6 @@ import {
   IconButton,
   Menu,
   MenuItem,
-  Container,
 } from "@mui/material";
 
 import { LogoSmall } from "@/pages/Login/Logo/Logo";
@@ -28,39 +27,37 @@ export function AppHeader({ onLogout }: AppHeaderProps) {
 
   return (
     <AppBar position="fixed" elevation={0} className={styles.appBar}>
-      <Container maxWidth="xl">
-        <Toolbar disableGutters className={styles.toolbar}>
-          <Box className={styles.logoWrapper}>
-            <LogoSmall />
-          </Box>
-          <Box className={styles.userWrapper}>
-            <IconButton onClick={handleOpenMenu} size="small">
-              <Avatar {...stringAvatar("Jhonatan Silva")} />
-            </IconButton>
-          </Box>
+      <Toolbar disableGutters className={styles.toolbar}>
+        <Box className={styles.logoWrapper}>
+          <LogoSmall />
+        </Box>
+        <Box className={styles.userWrapper}>
+          <IconButton onClick={handleOpenMenu} size="small">
+            <Avatar {...stringAvatar("Jhonatan Silva")} />
+          </IconButton>
+        </Box>
 
-          {/* Menu */}
-          <Menu
-            anchorEl={anchorEl}
-            open={open}
-            onClose={handleCloseMenu}
-            anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
-            transformOrigin={{ vertical: "top", horizontal: "right" }}
+        {/* Menu */}
+        <Menu
+          anchorEl={anchorEl}
+          open={open}
+          onClose={handleCloseMenu}
+          anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
+          transformOrigin={{ vertical: "top", horizontal: "right" }}
+        >
+          <MenuItem onClick={handleCloseMenu}>Perfil</MenuItem>
+          <MenuItem onClick={handleCloseMenu}>Configurações</MenuItem>
+          <MenuItem
+            onClick={() => {
+              handleCloseMenu();
+              onLogout?.();
+            }}
+            sx={{ color: "error.main" }}
           >
-            <MenuItem onClick={handleCloseMenu}>Perfil</MenuItem>
-            <MenuItem onClick={handleCloseMenu}>Configurações</MenuItem>
-            <MenuItem
-              onClick={() => {
-                handleCloseMenu();
-                onLogout?.();
-              }}
-              sx={{ color: "error.main" }}
-            >
-              Sair
-            </MenuItem>
-          </Menu>
-        </Toolbar>
-      </Container>
+            Sair
+          </MenuItem>
+        </Menu>
+      </Toolbar>
     </AppBar>
   );
 }

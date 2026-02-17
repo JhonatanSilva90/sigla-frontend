@@ -1,4 +1,4 @@
-import { Box, Button, IconButton } from "@mui/material";
+import { Box, Button, IconButton, Typography } from "@mui/material";
 import EditOutlinedIcon from "@mui/icons-material/EditOutlined";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import { useNavigate } from "react-router-dom";
@@ -83,36 +83,39 @@ export function LicenseTable() {
 
   return (
     <Box className={styles.container}>
-      {/* Filtros */}
-      <Box className={styles.filters}>
-        {STATUS_FILTERS.map((item: StatusFilter) => {
-          const isActive = status === item;
-          return (
-            <Button
-              key={item}
-              size="small"
-              variant={isActive ? "contained" : "outlined"}
-              onClick={() => setStatus(item)}
-              className={isActive ? styles.filterActive : styles.filter}
-            >
-              {getStatusLabel(item)}
-            </Button>
-          );
-        })}
+      <Typography variant="h6">Acompanhamento de Licenças</Typography>
+      <Box className={styles.table}>
+        {/* Filtros */}
+        <Box className={styles.filters}>
+          {STATUS_FILTERS.map((item: StatusFilter) => {
+            const isActive = status === item;
+            return (
+              <Button
+                key={item}
+                size="small"
+                variant={isActive ? "contained" : "outlined"}
+                onClick={() => setStatus(item)}
+                className={isActive ? styles.filterActive : styles.filter}
+              >
+                {getStatusLabel(item)}
+              </Button>
+            );
+          })}
+        </Box>
+
+        {/* Tabela */}
+        <DataTable columns={columns} data={data} rowKey={(row) => row.id} />
+
+        {/* Paginação */}
+        {totalPages > 1 && (
+          <TablePagination
+            page={page}
+            totalPages={totalPages}
+            onChange={setPage}
+            align="flex-end"
+          />
+        )}
       </Box>
-
-      {/* Tabela */}
-      <DataTable columns={columns} data={data} rowKey={(row) => row.id} />
-
-      {/* Paginação */}
-      {totalPages > 1 && (
-        <TablePagination
-          page={page}
-          totalPages={totalPages}
-          onChange={setPage}
-          align="flex-end"
-        />
-      )}
     </Box>
   );
 }

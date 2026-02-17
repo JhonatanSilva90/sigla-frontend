@@ -1,16 +1,15 @@
 import { Box } from "@mui/material";
 import { Outlet } from "react-router-dom";
-// import { Menu } from "@/features/licenses/technicalResponsible";
 import { Menu } from "@/shared/components";
 
-export function TechnicalResponsibleLayout() {
+export function SecretaryLayout() {
   return (
     <Box display="flex" gap={4}>
       <Menu
-        title="RESPONSÁVEL TÉCNICO"
+        title="SECRETÁRIO"
         items={[
-          { label: "Acompanhar Licenças", path: "tracker" },
-          { label: "Protocolar Licença", path: "protocol" },
+          { label: "Licenças", path: "licenses" },
+          { label: "Usuários", path: "users" },
           { label: "Documentos Padrão", path: "standard-documents" },
         ]}
       />

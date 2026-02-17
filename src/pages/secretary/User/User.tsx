@@ -7,10 +7,11 @@ import {
   Paper,
   TextField,
   IconButton,
+  Box,
 } from "@mui/material";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 
-import { SecretaryLayout } from "../../layouts/SecretaryLayout/SecretaryLayout";
+// import { SecretaryLayout } from "../../layouts/SecretaryLayout/SecretaryLayout";
 import { DataTable, TablePagination, type Column } from "@/shared/components";
 import type { UserDTO } from "@/features/users/User/types";
 import styles from "./User.module.scss";
@@ -60,7 +61,7 @@ export const User: FC = () => {
   }
 
   return (
-    <SecretaryLayout>
+    <Box>
       {/* Header */}
       <Stack direction="row" justifyContent="space-between" mb={3}>
         <Typography variant="h5">Gestão de Usuários</Typography>
@@ -101,6 +102,6 @@ export const User: FC = () => {
         onChange={setPage}
         align="flex-end"
       />
-    </SecretaryLayout>
+    </Box>
   );
 };

@@ -7,9 +7,10 @@ import {
   Paper,
   TextField,
   IconButton,
+  Box,
 } from "@mui/material";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
-import { SecretaryLayout } from "@/pages/layouts/SecretaryLayout/SecretaryLayout";
+// import { SecretaryLayout } from "@/pages/layouts/SecretaryLayout/SecretaryLayout";
 import { DataTable, TablePagination, type Column } from "@/shared/components";
 import { ROLE_LABELS } from "@/shared/auth/roles";
 import type { UserDTO } from "./types";
@@ -65,10 +66,10 @@ export const User: FC = () => {
   } = useUsers();
 
   return (
-    <SecretaryLayout>
+    <Box>
       {/* Header */}
       <Stack direction="row" justifyContent="space-between" mb={3}>
-        <Typography variant="h5">Gestão de Usuários</Typography>
+        <Typography variant="h6">Gestão de Usuários</Typography>
         <Button variant="contained" onClick={handleAdd}>
           + Adicionar Usuário
         </Button>
@@ -106,6 +107,6 @@ export const User: FC = () => {
         onChange={setPage}
         align="flex-end"
       />
-    </SecretaryLayout>
+    </Box>
   );
 };

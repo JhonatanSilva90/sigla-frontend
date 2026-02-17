@@ -55,7 +55,6 @@ export function LicenseTracker() {
   return (
     <Box className={styles.container}>
       <Typography variant="h6">Acompanhamento de Licenças</Typography>
-
       <Box className={styles.tableWrap}>
         <DataTable columns={columns} data={items} rowKey={(r) => r.id} />
       </Box>

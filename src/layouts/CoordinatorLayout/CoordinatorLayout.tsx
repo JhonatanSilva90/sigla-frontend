@@ -4,7 +4,7 @@ import { Outlet } from "react-router-dom";
 
 export function CoordinatorLayout() {
   return (
-    <Box display="flex" gap={4}>
+    <Box display="flex">
       <Menu
         title="COORDENADOR"
         items={[

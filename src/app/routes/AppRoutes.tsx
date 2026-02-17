@@ -1,7 +1,6 @@
 import { Routes, Route, Navigate } from "react-router-dom";
-import { Login } from "@/pages/Login/Login";
 import { LicenseTable } from "@/shared/components/LicenseTable/LicenseTable";
-import { Details } from "@/pages/Details/Details";
+import { Login, Details, RegisteredLicenses } from "@/pages";
 import { User, UserForm, TechnicalResponsibleForm } from "@/features/users";
 import {
   ProtocolForm,
@@ -54,6 +53,7 @@ export function AppRoutes() {
         {/* Rota aninhada - Coordenador */}
         <Route path="coordinator" element={<CoordinatorLayout />}>
           <Route index element={<Navigate to="licenses" replace />} />
+          <Route path="protocols" element={<RegisteredLicenses />} />
           <Route path="licenses" element={<LicenseTable />} />
           <Route path="users" element={<User />} />
           <Route path="standard-documents" element={<StandardDocuments />} />

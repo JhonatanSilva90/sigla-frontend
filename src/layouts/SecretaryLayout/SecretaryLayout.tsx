@@ -4,7 +4,7 @@ import { Menu } from "@/shared/components";
 
 export function SecretaryLayout() {
   return (
-    <Box display="flex" gap={4}>
+    <Box display="flex">
       <Menu
         title="SECRETÁRIO"
         items={[

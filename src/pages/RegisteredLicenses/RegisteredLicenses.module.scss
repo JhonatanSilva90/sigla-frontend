@@ -1,0 +1,83 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 24px;
+  width: 100%;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  font-weight: 600;
+  color: var(--black);
+}
+
+.subtitle {
+  color: var(--grey-700);
+}
+
+.paper {
+  padding: var(--space-3);
+  border-radius: var(--radius-md);
+  background-color: var(--bg-paper);
+}
+
+.empty {
+  color: var(--grey-500);
+}
+
+.tableContainer {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.table {
+  .MuiTableCell-root {
+    font-size: 0.8rem;
+    padding: 8px 12px;
+  }
+}
+
+.tableHead {
+  background-color: var(--green-50);
+
+  th {
+    font-weight: 600;
+    color: var(--green-700);
+    font-size: 0.75rem;
+    padding: 10px 12px;
+    white-space: nowrap; // 👈 impede quebra
+  }
+}
+
+.row {
+  transition: background-color 0.2s ease;
+
+  &:hover {
+    background-color: var(--green-50);
+  }
+}
+
+.select {
+  min-width: 160px;
+  background-color: var(--white);
+  border-radius: var(--radius-sm);
+
+  .MuiSelect-select {
+    font-size: 0.8rem;
+    padding: 6px 10px;
+  }
+}
+
+.actionButton {
+  white-space: nowrap;
+  font-size: 0.75rem;
+  padding: 6px 12px;
+}

@@ -5,7 +5,7 @@ import { Menu } from "@/shared/components";
 
 export function TechnicalResponsibleLayout() {
   return (
-    <Box display="flex" gap={4}>
+    <Box display="flex">
       <Menu
         title="RESPONSÁVEL TÉCNICO"
         items={[

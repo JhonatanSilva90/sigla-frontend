@@ -1,6 +1,12 @@
 .container {
-  padding: 12px 0;
-  gap: var(--space-3);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 24px;
+  width: 100%;
 }
 .table {
   background: var(--grey-100);
@@ -92,6 +98,9 @@
 }
 
 /* ===== STATUS COLORS ===== */
+.PROTOCOLADO {
+  background-color: var(--status-protocolado);
+}
 
 .LICENCIADA {
   --status-color: var(--status-licenciada);

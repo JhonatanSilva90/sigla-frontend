@@ -66,7 +66,7 @@ export const User: FC = () => {
   } = useUsers();
 
   return (
-    <Box>
+    <Box className={styles.container}>
       {/* Header */}
       <Stack direction="row" justifyContent="space-between" mb={3}>
         <Typography variant="h6">Gestão de Usuários</Typography>

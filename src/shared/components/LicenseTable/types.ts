@@ -1,4 +1,5 @@
 export type LicenseStatus =
+  | "PROTOCOLADO"
   | "LICENCIADA"
   | "VENCIDA"
   | "EM_ANDAMENTO"
@@ -6,11 +7,20 @@ export type LicenseStatus =
 
 export const STATUS_FILTERS: StatusFilter[] = [
   "TODOS",
+  "PROTOCOLADO",
   "EM_ANDAMENTO",
   "LICENCIADA",
   "A_VENCER",
   "VENCIDA",
 ];
+
+export const LICENSE_STATUS_LABEL: Record<LicenseStatus, string> = {
+  PROTOCOLADO: "Protocolado",
+  LICENCIADA: "Licenciada",
+  VENCIDA: "Vencida",
+  EM_ANDAMENTO: "Em andamento",
+  A_VENCER: "A vencer",
+};
 
 export interface Tramitation {
   data: string;

@@ -44,6 +44,7 @@ export function ThemeCSSVars() {
           --grey-700: ${theme.palette.grey[700]};
 
           /* ================= STATUS ================= */
+          --status-protocolado: ${theme.palette.protocolado.main};
           --status-licenciada: ${theme.palette.success.main};
           --status-vencida: ${theme.palette.error.main};
           --status-a-vencer: ${theme.palette.warning.main};

@@ -18,6 +18,7 @@ declare module "@mui/material/styles" {
       800: string;
       900: string;
     };
+    protocolado: Palette["primary"];
   }
 
   interface PaletteOptions {
@@ -33,5 +34,6 @@ declare module "@mui/material/styles" {
       800?: string;
       900?: string;
     };
+    protocolado?: PaletteOptions["primary"];
   }
 }

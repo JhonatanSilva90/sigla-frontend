@@ -21,6 +21,10 @@ export const theme = createTheme({
     warning: { main: "#ed6c02" },
     error: { main: "#d32f2f" },
 
+    protocolado: {
+      main: "#546E7A",
+    },
+
     text: {
       primary: "#000000",
       secondary: "#5f5f5f",

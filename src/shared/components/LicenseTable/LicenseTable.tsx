@@ -8,17 +8,19 @@ import styles from "./LicenseTable.module.scss";
 import { useLicenseTable } from "./hooks";
 import type { LicenseStatus, StatusFilter } from "./types";
 import { STATUS_FILTERS } from "./types";
+import { LICENSE_STATUS_LABEL } from "./types";
 
 // ----- Labels -----
-const statusLabel: Record<LicenseStatus, string> = {
-  LICENCIADA: "Licenciada",
-  VENCIDA: "Vencida",
-  EM_ANDAMENTO: "Em andamento",
-  A_VENCER: "A vencer",
-};
+// const statusLabel: Record<LicenseStatus, string> = {
+//   PROTOCOLADO: "Protocolado",
+//   LICENCIADA: "Licenciada",
+//   VENCIDA: "Vencida",
+//   EM_ANDAMENTO: "Em andamento",
+//   A_VENCER: "A vencer",
+// };
 
 function getStatusLabel(status: LicenseStatus | "TODOS") {
-  return status === "TODOS" ? "Todos" : statusLabel[status];
+  return status === "TODOS" ? "Todos" : LICENSE_STATUS_LABEL[status];
 }
 
 export function LicenseTable() {
@@ -55,7 +57,7 @@ export function LicenseTable() {
       header: "Status",
       render: (row) => (
         <span className={`${styles.status} ${styles[row.status]}`}>
-          {statusLabel[row.status]}
+          {LICENSE_STATUS_LABEL[row.status]}
         </span>
       ),
     },

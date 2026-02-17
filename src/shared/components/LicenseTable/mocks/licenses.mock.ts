@@ -6,7 +6,7 @@ export const LICENSES_MOCK: License[] = [
     processo: "002/2022",
     empreendimento: "Fazenda Boa Esperança",
     tipoLicenca: "Licença Prévia",
-    status: "EM_ANDAMENTO",
+    status: "PROTOCOLADO",
     validade: "15/09/2024",
 
     cliente: {
@@ -654,7 +654,7 @@ export const LICENSES_MOCK: License[] = [
     processo: "511/2018",
     empreendimento: "Usina Hidrelétrica Alto Rio",
     tipoLicenca: "Licença de Operação",
-    status: "VENCIDA",
+    status: "PROTOCOLADO",
     validade: "01/06/2021",
 
     cliente: {
@@ -945,7 +945,7 @@ export const LICENSES_MOCK: License[] = [
     processo: "901/2024",
     empreendimento: "Centro Logístico Vale Azul",
     tipoLicenca: "Licença Prévia",
-    status: "A_VENCER",
+    status: "PROTOCOLADO",
     validade: "09/02/2025",
 
     cliente: {
@@ -1013,7 +1013,7 @@ export const LICENSES_MOCK: License[] = [
     processo: "333/2022",
     empreendimento: "Laticínios Serra Branca",
     tipoLicenca: "Licença de Operação",
-    status: "EM_ANDAMENTO",
+    status: "PROTOCOLADO",
     validade: "28/11/2025",
 
     cliente: {

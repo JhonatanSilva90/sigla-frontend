@@ -1,5 +1,5 @@
 import { Stepper, Step, StepLabel } from "@mui/material";
-import type { LicenseStatus } from "../types/license.types";
+import type { LicenseStatus } from "@/pages/types/lincense.types";
 import {
   AssignmentTurnedIn,
   Search,

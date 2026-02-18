@@ -10,15 +10,6 @@ import type { LicenseStatus, StatusFilter } from "./types";
 import { STATUS_FILTERS } from "./types";
 import { LICENSE_STATUS_LABEL } from "./types";
 
-// ----- Labels -----
-// const statusLabel: Record<LicenseStatus, string> = {
-//   PROTOCOLADO: "Protocolado",
-//   LICENCIADA: "Licenciada",
-//   VENCIDA: "Vencida",
-//   EM_ANDAMENTO: "Em andamento",
-//   A_VENCER: "A vencer",
-// };
-
 function getStatusLabel(status: LicenseStatus | "TODOS") {
   return status === "TODOS" ? "Todos" : LICENSE_STATUS_LABEL[status];
 }

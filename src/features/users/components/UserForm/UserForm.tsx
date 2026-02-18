@@ -10,7 +10,7 @@ import {
 import { FormField } from "@/shared/components";
 import styles from "./UserForm.module.scss";
 import { useEffect, useState } from "react";
-import { TechnicalResponsibleForm } from "../technicalResponsible";
+import { TechnicalResponsibleForm } from "../TechnicalResponsibleForm";
 import { Role, ROLE_LABELS } from "@/shared/auth/roles";
 import { allowedTargetsForCreator } from "@/shared/auth/roleUtils";
 import { useCurrentUser } from "@/shared/auth/useCurrentUser";

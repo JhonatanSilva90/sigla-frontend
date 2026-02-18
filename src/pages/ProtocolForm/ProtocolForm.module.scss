@@ -1,8 +1,12 @@
 .container {
   display: flex;
   flex-direction: column;
-  gap: var(--space-3);
-  padding: 12px 0;
+  gap: var(--space-1);
+
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 24px;
+  width: 100%;
 }
 
 /* Apenas os selects ficam em grid */

@@ -10,15 +10,19 @@ import {
   Box,
 } from "@mui/material";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
-
-// import { SecretaryLayout } from "../../layouts/SecretaryLayout/SecretaryLayout";
 import { DataTable, TablePagination, type Column } from "@/shared/components";
-import type { UserDTO } from "@/features/users/User/types";
-import styles from "./User.module.scss";
-import { useUsers } from "@/features/users/User/hooks/useUsers";
+import { ROLE_LABELS } from "@/shared/auth/roles";
+import type { UserDTO } from "./types";
+import styles from "./Users.module.scss";
+import { useUsers } from "./hooks/useUsers";
 
 /* ----- Colunas ----- */
 const userColumns: Column<UserDTO>[] = [
+  {
+    key: "tipo",
+    header: "Tipo de Usuário",
+    render: (row) => (row.role ? ROLE_LABELS[row.role] : "-"),
+  },
   { key: "nome", header: "Nome", render: (row) => row.nome },
   { key: "cpf", header: "CPF", render: (row) => row.cpf },
   { key: "email", header: "Email", render: (row) => row.email },
@@ -40,7 +44,13 @@ const userColumns: Column<UserDTO>[] = [
   },
 ];
 
-export const User: FC = () => {
+export const Users: FC = () => {
+  const navigate = useNavigate();
+
+  function handleAdd() {
+    navigate("/users/new");
+  }
+
   const {
     users,
     totalPages,
@@ -54,17 +64,11 @@ export const User: FC = () => {
     setPage,
   } = useUsers();
 
-  const navigate = useNavigate();
-
-  function handleAdd() {
-    navigate("/users/secretary/new");
-  }
-
   return (
-    <Box>
+    <Box className={styles.container}>
       {/* Header */}
       <Stack direction="row" justifyContent="space-between" mb={3}>
-        <Typography variant="h5">Gestão de Usuários</Typography>
+        <Typography variant="h6">Gestão de Usuários</Typography>
         <Button variant="contained" onClick={handleAdd}>
           + Adicionar Usuário
         </Button>

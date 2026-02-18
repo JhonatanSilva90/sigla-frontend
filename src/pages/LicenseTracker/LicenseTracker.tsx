@@ -1,7 +1,7 @@
 import { Box, Button, Typography } from "@mui/material";
 import { DataTable, type Column } from "@/shared/components";
-import { LicenseStepper } from "../../components";
-import type { License } from "../../types";
+import { LicenseStepper } from "@/shared/components";
+import type { License } from "../types/lincense.types";
 import styles from "./LicenseTracker.module.scss";
 import { useState } from "react";
 

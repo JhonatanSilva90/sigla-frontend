@@ -13,7 +13,7 @@ import {
   Button,
 } from "@mui/material";
 import { useState } from "react";
-import { USER_MOCK } from "@/features/users/User/mocks/user.mock";
+import { USER_MOCK } from "../Users/mocks/user.mock";
 import type { UserDTO } from "@/features/users/User/types";
 
 import { LICENSES_MOCK } from "@/shared/components/LicenseTable/mocks/licenses.mock";
